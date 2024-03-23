@@ -77,7 +77,7 @@ body {
 }
 .movie-category {
     font-size: 14px;
-    color: #ff280e;
+    color: grey;
 }
 .movie-average {
     position: absolute;
@@ -105,5 +105,5 @@ body {
 }
 .movie-year {
     font-size: 14px;
-    color: yellow;
+    color: grey;
 }
