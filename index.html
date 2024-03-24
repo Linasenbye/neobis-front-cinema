@@ -11,17 +11,19 @@
     <header class="container">
         <div class="header-content">
             <a href="index.html" class="header-logo">Movie App</a>
-            <a href="" class="premiere">Премьеры месяца</a>
-            <a href="" class="waiting">Топ ожидаемых</a>
-            <a href="" class="upcoming">Релизы месяца</a>
-            <a href="" class="best">Топ лучшие</a>
-            <a href="" class="favorites">Избранные</a>
-        <form >
-            <input type="text" class="header-search" placeholder="Search">
-        </form>
+            <div class="category">
+                <div class="premiere">Премьеры месяца</div>
+                <div class="waiting">Топ ожидаемых</div>
+                <div class="upcoming">Релизы месяца</div>
+                <div class="best">Топ лучшие</div>
+                <div class="favorites">Избранные</div>
+            </div>
+            <div class="search">
+                <input id="searchInput" type="text" class="search-box" value="мой сосед тоторо">
+            </div>
     </div>
     </header>
-    <div class="container">
+    <div class="container-movie">
         <div class="movies"></div>
     </div>
     <script src="app.js"></script>
