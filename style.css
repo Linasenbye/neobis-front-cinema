@@ -9,17 +9,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-input, button {
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: initial;
-}
-
 .container {
     max-width: 100%;
     margin: 0 auto;
+    pointer-events: stroke;
 }
 
 .container-movie {
@@ -42,22 +35,24 @@ input, button {
     color: white;
 }
 
-.category {
+.category-container {
     width: 80%;
     display: flex;
     align-content: center;
     justify-content: space-evenly;
 }
 
-.category div {
+.category-container div {
     padding: 0.5em;
     color: white;
     font-size: 20px;
+    
 }
 
-.category div:hover {
+.category-container div:hover {
     border-radius: 1.5em;
     box-shadow: 0px 2px 18px 0px rgba(239, 239, 240);
+
 }
 
 .search {
@@ -83,7 +78,7 @@ input, button {
     grid-template-columns: repeat(5, 1fr);
 }
 
-.movie {
+.item {
     width: 240px;
     margin: 10px;
     position: relative;
@@ -123,6 +118,10 @@ input, button {
     font-size: 14px;
     color: grey;
 }
+.movie-year {
+    font-size: 14px;
+    color: grey;
+}
 .movie-average {
     position: absolute;
     top: 10px;
@@ -138,6 +137,7 @@ input, button {
     color: white;
     font-size: 14px;
 }
+
 .movie-average-green {
     border: 1px solid green;
 }
@@ -147,7 +147,34 @@ input, button {
 .movie-average-red {
     border: 1px solid red;
 }
-.movie-year {
-    font-size: 14px;
-    color: grey;
+.movie-average-nothing {
+    display: none;
+}
+
+.favorite {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3EFoundation%20%2F%20Icon%20%2F%2024%20%2F%20Control%20%2F%20Favourite%20%2F%2001%20Inactive%20Filled%3C%2Ftitle%3E%3Cdefs%3E%3Cpath%20d%3D%22M17.376%201C21.476%201%2024%203.578%2024%207.807c0%201.628-.961%203.63-2.696%205.953-.89%201.192-1.97%202.446-3.196%203.737a71.66%2071.66%200%200%201-3.987%203.865%2071.495%2071.495%200%200%201-1.816%201.58l-.305.251-.305-.252c-.093-.076-.264-.22-.503-.424-.396-.34-.838-.727-1.313-1.155a71.66%2071.66%200%200%201-3.987-3.865c-1.227-1.291-2.305-2.545-3.196-3.737C.961%2011.437%200%209.435%200%207.807%200%203.578%202.524%201%206.624%201c2.08%200%204.23%201.562%205.376%203.58C13.145%202.56%2015.294%201%2017.376%201zM12%2021.79l.18-.154c.383-.329.812-.704%201.273-1.12a69.488%2069.488%200%200%200%203.865-3.746c1.18-1.244%202.217-2.448%203.068-3.587%201.593-2.132%202.462-3.943%202.462-5.286%200-3.64-2.063-5.747-5.565-5.747-1.927%200-4.049%201.768-4.842%203.843L12%207.145l-.44-1.152C10.765%203.919%208.642%202.15%206.716%202.15c-3.502%200-5.565%202.107-5.565%205.747%200%201.343.87%203.154%202.462%205.286.85%201.14%201.887%202.343%203.068%203.587a69.488%2069.488%200%200%200%203.865%203.747A69.313%2069.313%200%200%200%2012%2021.789z%22%20id%3D%22prefix__a%22%2F%3E%3C%2Fdefs%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M0%200h24v24H0z%22%2F%3E%3Cpath%20d%3D%22M17.376%201C21.476%201%2024%203.556%2024%207.748c0%201.614-.961%203.598-2.696%205.9-.89%201.183-1.97%202.425-3.196%203.705a71.38%2071.38%200%200%201-3.987%203.832%2071.307%2071.307%200%200%201-1.816%201.566L12%2023l-.305-.25a71.307%2071.307%200%200%201-1.816-1.565%2071.38%2071.38%200%200%201-3.987-3.832c-1.227-1.28-2.305-2.522-3.196-3.704C.961%2011.346%200%209.362%200%207.748%200%203.556%202.524%201%206.624%201c2.08%200%204.23%201.548%205.376%203.548C13.145%202.548%2015.294%201%2017.376%201z%22%20fill%3D%22%23FAF9F8%22%20fill-rule%3D%22nonzero%22%2F%3E%3Cuse%20fill%3D%22%23222%22%20xlink%3Ahref%3D%22%23prefix__a%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    display: block;
+    height: 44px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 44px;
+    z-index: 1;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    text-transform: none;
+}
+
+.liked, .favorite:hover {
+    background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3EFoundation%20%2F%20Icon%20%2F%2024%20%2F%20Control%20%2F%20Favourite%20%2F%2003%20Active%3C%2Ftitle%3E%3Cdefs%3E%3Cpath%20d%3D%22M12%205.4C11.166%203.217%208.83%201%206.4%201%202.435%201%200%203.435%200%207.6%200%2013.1%2012%2023%2012%2023s12-9.9%2012-15.4C24%203.435%2021.565%201%2017.6%201c-2.433%200-4.766%202.217-5.6%204.4z%22%20id%3D%22prefix__a%22%2F%3E%3C%2Fdefs%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M0%200h24v24H0z%22%2F%3E%3Cuse%20fill%3D%22%23E61E23%22%20xlink%3Ahref%3D%22%23prefix__a%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+    background-repeat: no-repeat;
 }
