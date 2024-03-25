@@ -8,11 +8,16 @@ body {
     background-color: #1a191f;
     font-family: 'Open Sans', sans-serif;
 }
-
+input {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
 .container {
     max-width: 100%;
     margin: 0 auto;
-    pointer-events: stroke;
 }
 
 .container-movie {
@@ -30,9 +35,10 @@ body {
     height: 60px;
 }
 .header-logo {
-    font-size: 32px;
+    font-size: 28px;
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .category-container {
@@ -46,12 +52,12 @@ body {
     padding: 0.5em;
     color: white;
     font-size: 20px;
-    
 }
 
 .category-container div:hover {
     border-radius: 1.5em;
     box-shadow: 0px 2px 18px 0px rgba(239, 239, 240);
+    cursor: pointer;
 
 }
 
@@ -109,6 +115,7 @@ body {
 }
 .movie-info {
     padding: 10px 0;
+    cursor: default;
 }
 .movie-title {
     font-size: 16px;
