@@ -35,7 +35,7 @@ input {
     height: 60px;
 }
 .header-logo {
-    font-size: 22px;
+    font-size: 1.75rem;
     text-decoration: none;
     color: white;
     cursor: pointer;
